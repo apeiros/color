@@ -1,0 +1,39 @@
+Hi there
+Since I recently had a bit of free time I decided to practice C a bit and wrote
+an extension with color classes for ruby in C and ruby.
+Color is a collection of classes to deal with colors. To
+create, compare, store and manipulate them.
+At the moment I try to get in contact with Austin Ziegler in order to merge it
+with the color gem he currently provides.
+Until then you can get the beta here:
+http://rubyforge.org/frs/?group_id=1349&release_id=12834
+To install it, download the gem and then type: gem install /path/to/color-0.0.3.gem.tar
+
+I hope for some response, I'm especially looking for input on:
+	-The C code: since this is only my second extension written in C with almost no prior
+	 C experience, input on the C code is most welcome.
+	-Common#distance: Ideas for a perceptional distance. Also an open
+	 question is, whether it should include alpha or not.
+	 Personally I'm against including alpha (even though the
+	 current implementation includes it).
+	 My current thought goes towards using cylindrical HSV with hue
+	 weighted more.
+	-Color spaces/management: If there are people with knowledge
+	 about color spaces, please bring it on. Color spaces are
+	 required to make meaningful transformations between different color
+	 models, unlike the current purely theoretical implementations
+	 which are of little use in real applications. They are also
+	 required to do transformations to CIE XYZ/Lab.
+	-Higher accuracy: The C implementation of RGB and CMYK both work
+	 with 8 bit per component, but there are e.g. already scanners
+	 which can deliver 12 bit per component. Is that a requirement?
+	 If yes, separate classes for that or beef up the existing ones?
+	-#blend: alternative algorithms and general input
+	-Named colors
+	-Missing features - tell me what you'd like to have.
+
+Please notice that it is still beta. There is still stuff I have in mind to do
+(e.g. port the test-units to the current setup and write more of them)
+
+Regards
+Stefan

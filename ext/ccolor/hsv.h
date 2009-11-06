@@ -1,0 +1,14 @@
+extern VALUE rb_color_hsv__allocate(VALUE class);
+extern VALUE rb_color_hsv_initialize(int argc, VALUE *argv, VALUE self);
+extern VALUE rb_color_hsv_initialize_copy(VALUE self, VALUE original);
+extern VALUE rb_color_hsv_hue(VALUE self);
+extern VALUE rb_color_hsv_saturation(VALUE self);
+extern VALUE rb_color_hsv_value(VALUE self);
+extern VALUE rb_color_hsv_alpha(VALUE self);
+extern VALUE rb_color_hsv_add(VALUE self, VALUE other);
+extern VALUE rb_color_hsv_sub(VALUE self, VALUE other);
+extern VALUE rb_color_hsv_complement(VALUE self);
+extern VALUE rb_color_hsv_eql(VALUE self, VALUE other);
+extern VALUE rb_color_hsv_distance(VALUE self, VALUE other);
+extern VALUE rb_color_hsv_hash(VALUE self);
+extern VALUE rb_color_hsv_to_rgb(VALUE self);

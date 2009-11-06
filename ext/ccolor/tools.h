@@ -1,0 +1,18 @@
+int min2(int x, int y);
+int min3(int x, int y, int z);
+int max2(int x, int y);
+int max3(int x, int y, int z);
+extern int color_cap(int value, int min, int max);
+extern float color_capf(float value, float min, float max);
+extern float color_rgb_distance(cRGB *color1, cRGB *color2);
+extern void color_rgb_interpolate(cRGB *color1, cRGB *color2, cRGB *color3, float pos);
+extern void color_convert_rgb_to_hsv(cRGB *rgb, cHSV *hsv);
+extern void color_convert_rgb_to_hsl(cRGB *rgb, cHSL *hsl);
+extern void color_convert_rgb_to_cmyk(cRGB *rgb, cCMYK *cmyk);
+extern void color_convert_hsv_to_rgb(cHSV *hsv, cRGB *rgb);
+extern void color_convert_hsl_to_rgb(cHSL *hsl, cRGB *rgb);
+extern void color_convert_cmyk_to_rgb(cCMYK *cmyk, cRGB *rgb);
+extern void color_convert_rgb_to_gray(cRGB *rgb, cGray *gray);
+extern void color_convert_cmyk_to_gray(cCMYK *cmyk, cGray *gray);
+extern void color_convert_gray_to_rgb(cGray *gray, cRGB *rgb);
+extern void color_convert_gray_to_cmyk(cGray *gray, cCMYK *cmyk);

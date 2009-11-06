@@ -1,0 +1,14 @@
+extern VALUE rb_color_hsl__allocate(VALUE class);
+extern VALUE rb_color_hsl_initialize(int argc, VALUE *argv, VALUE self);
+extern VALUE rb_color_hsl_initialize_copy(VALUE self, VALUE original);
+extern VALUE rb_color_hsl_hue(VALUE self);
+extern VALUE rb_color_hsl_saturation(VALUE self);
+extern VALUE rb_color_hsl_luminance(VALUE self);
+extern VALUE rb_color_hsl_alpha(VALUE self);
+extern VALUE rb_color_hsl_add(VALUE self, VALUE other);
+extern VALUE rb_color_hsl_sub(VALUE self, VALUE other);
+extern VALUE rb_color_hsl_complement(VALUE self);
+extern VALUE rb_color_hsl_distance(VALUE self, VALUE other);
+extern VALUE rb_color_hsl_eql(VALUE self, VALUE other);
+extern VALUE rb_color_hsl_hash(VALUE self);
+extern VALUE rb_color_hsl_to_rgb(VALUE self);

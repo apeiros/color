@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Color::RGB</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Color::RGB</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/color/rgb_rb.html">
+                lib/color/rgb.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h3>Description</h3>
+<p>
+<a href="RGB.html">RGB</a> representation of color.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000040">blend</a>&nbsp;&nbsp;
+      <a href="#M000036">from</a>&nbsp;&nbsp;
+      <a href="#M000038">from_html</a>&nbsp;&nbsp;
+      <a href="#M000037">from_int</a>&nbsp;&nbsp;
+      <a href="#M000039">new</a>&nbsp;&nbsp;
+      <a href="#M000043">to_a</a>&nbsp;&nbsp;
+      <a href="#M000044">to_hash</a>&nbsp;&nbsp;
+      <a href="#M000041">to_i</a>&nbsp;&nbsp;
+      <a href="#M000042">to_s</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="Common.html">Common</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">alpha</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+The transparency of this color. A value between 0 and 255, where 0 means
+opaque and 255 fully transparent.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">blue</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+The blue portion of this color. A value between 0 and 255.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">green</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+The green portion of this color. A value between 0 and 255.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">red</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+The red portion of this color. A value between 0 and 255.
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000036" class="method-detail">
+        <a name="M000036"></a>
+
+        <div class="method-heading">
+          <a href="#M000036" class="method-signature">
+          <span class="method-name">from</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000036-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/color/rgb.rb, line 16</span>
+16:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">from</span>(<span class="ruby-identifier">value</span>)
+17:         <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_rgb</span>
+18:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
+
+        <div class="method-heading">
+          <a href="#M000038" class="method-signature">
+          <span class="method-name">from_html</span><span class="method-args">(string)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <h3>Synopsis</h3>
+<pre>
+  Color::RGB.from_html('#ff0099') # =&gt; &lt;RGB: 255, 0, 153, 0 (#FF0099)&gt;
+</pre>
+<h3>Description</h3>
+<p>
+Create an <a href="RGB.html">RGB</a> color <a
+href="RGB.html#M000036">from</a> an HTML string, e.g. &#8216;ff0099&#8217;.
+Accepts strings with and without #, also accepts three digit notation
+(&#8216;f09&#8217;). See Color::RGB#to_html.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000038-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000038-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/color/rgb.rb, line 39</span>
+39:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">from_html</span>(<span class="ruby-identifier">string</span>)
+40:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">downcase</span>
+41:           <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A#?([\da-f]{2})([\da-f]{2})([\da-f]{2})\Z/</span>
+42:             <span class="ruby-identifier">new</span>(<span class="ruby-identifier">$1</span>.<span class="ruby-identifier">to_i</span>(<span class="ruby-value">16</span>), <span class="ruby-identifier">$2</span>.<span class="ruby-identifier">to_i</span>(<span class="ruby-value">16</span>), <span class="ruby-identifier">$3</span>.<span class="ruby-identifier">to_i</span>(<span class="ruby-value">16</span>))
+43:           <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A#?([\da-f])([\da-f])([\da-f])\Z/</span>
+44:             <span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span>[<span class="ruby-identifier">$1</span>,<span class="ruby-identifier">$2</span>,<span class="ruby-identifier">$3</span>].<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span><span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_i</span>(<span class="ruby-value">16</span>)<span class="ruby-operator">*</span><span class="ruby-value">17</span>})
+45:           <span class="ruby-keyword kw">else</span>
+46:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Invalid format #{string}, must be #hhh or #hhhhhh&quot;</span>
+47:         <span class="ruby-keyword kw">end</span>
+48:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000037" class="method-detail">
+        <a name="M000037"></a>
+
+        <div class="method-heading">
+          <a href="#M000037" class="method-signature">
+          <span class="method-name">from_int</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <h3>Synopsis</h3>
+<pre>
+  Color::RGB.from_int(integer) -&gt; RGB instance
+</pre>
+<h3>Description</h3>
+<p>
+Create an <a href="RGB.html">RGB</a> color <a
+href="RGB.html#M000036">from</a> an integer of the form 0xaarrggbb. See <a
+href="RGB.html#M000041">Color::RGB#to_i</a>.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000037-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/color/rgb.rb, line 27</span>
+27:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">from_int</span>(<span class="ruby-identifier">value</span>)
+28:         <span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">0xff</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">8</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">0xff</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">16</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">0xff</span>, <span class="ruby-identifier">value</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">24</span>)
+29:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
+
+        <div class="method-heading">
+          <a href="#M000039" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">(red, green, blue, alpha=0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <h3>Synopsis</h3>
+<pre>
+  Color::RGB.new(red, green, blue[, alpha])
+</pre>
+<h3>Description</h3>
+<p>
+Create a <a href="RGB.html#M000039">new</a> <a href="RGB.html">RGB</a>
+instance. Red, green, blue and alpha are Integers within 0 and 255 each,
+where for alpha 0 means opaque and 255 fully transparent.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000039-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000039-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/color/rgb.rb, line 71</span>
+71:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">red</span>, <span class="ruby-identifier">green</span>, <span class="ruby-identifier">blue</span>, <span class="ruby-identifier">alpha</span>=<span class="ruby-value">0</span>)
+72:       <span class="ruby-ivar">@red</span>   = <span class="ruby-identifier">red</span>.<span class="ruby-identifier">round</span>
+73:       <span class="ruby-ivar">@green</span> = <span class="ruby-identifier">green</span>.<span class="ruby-identifier">round</span>
+74:       <span class="ruby-ivar">@blue</span>  = <span class="ruby-identifier">blue</span>.<span class="ruby-identifier">round</span>
+75:       <span class="ruby-ivar">@alpha</span> = <span class="ruby-identifier">alpha</span>.<span class="ruby-identifier">round</span>
+76: 
+77:       <span class="ruby-keyword kw">unless</span> [<span class="ruby-identifier">red</span>, <span class="ruby-identifier">green</span>, <span class="ruby-identifier">blue</span>, <span class="ruby-identifier">alpha</span>].<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">between?</span>(<span class="ruby-value">0</span>,<span class="ruby-value">255</span>) }
+78:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Value must be between 0 and 255&quot;</span>
+79:       <span class="ruby-keyword kw">end</span>
+80:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000040" class="method-detail">
+        <a name="M000040"></a>
+
+        <div class="method-heading">
+          <a href="#M000040" class="method-signature">
+          <span class="method-name">blend</span><span class="method-args">(with, with_alpha=nil, using=:interpolate)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+See <a href="Common.html#M000005">Color::Common#blend</a> <a
+href="RGB.html#M000040">Color::RGB#blend</a> adds the additional modes:
+:multiply, :negative_multiply
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000040-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000040-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/color/rgb.rb, line 84</span>
+ 84:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blend</span>(<span class="ruby-identifier">with</span>, <span class="ruby-identifier">with_alpha</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">using</span>=<span class="ruby-identifier">:interpolate</span>)
+ 85:       <span class="ruby-identifier">with_alpha</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">with</span>.<span class="ruby-identifier">alpha</span>
+ 86:       <span class="ruby-identifier">opacity</span> = (<span class="ruby-value">255</span><span class="ruby-operator">-</span><span class="ruby-identifier">with_alpha</span>)<span class="ruby-operator">/</span><span class="ruby-value">255.0</span>
+ 87:       <span class="ruby-identifier">value</span>   = <span class="ruby-identifier">proc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>,<span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span><span class="ruby-operator">+</span><span class="ruby-identifier">a</span><span class="ruby-operator">-</span><span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-identifier">v</span> }
+ 88:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">using</span>
+ 89:         <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:interpolate</span>
+ 90:           <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(
+ 91:             (<span class="ruby-identifier">red</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">with</span>.<span class="ruby-identifier">red</span><span class="ruby-operator">-</span><span class="ruby-identifier">red</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">opacity</span>).<span class="ruby-identifier">round</span>,
+ 92:             (<span class="ruby-identifier">green</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">with</span>.<span class="ruby-identifier">green</span><span class="ruby-operator">-</span><span class="ruby-identifier">green</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">opacity</span>).<span class="ruby-identifier">round</span>,
+ 93:             (<span class="ruby-identifier">blue</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">with</span>.<span class="ruby-identifier">blue</span><span class="ruby-operator">-</span><span class="ruby-identifier">blue</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">opacity</span>).<span class="ruby-identifier">round</span>,
+ 94:             <span class="ruby-identifier">alpha</span>
+ 95:           )
+ 96:         <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:multiply</span>
+ 97:           <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(
+ 98:             ((<span class="ruby-identifier">red</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>[<span class="ruby-identifier">with</span>.<span class="ruby-identifier">red</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>, <span class="ruby-identifier">opacity</span>]<span class="ruby-operator">*</span><span class="ruby-value">255</span>).<span class="ruby-identifier">round</span>,
+ 99:             ((<span class="ruby-identifier">green</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>[<span class="ruby-identifier">with</span>.<span class="ruby-identifier">green</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>, <span class="ruby-identifier">opacity</span>]<span class="ruby-operator">*</span><span class="ruby-value">255</span>).<span class="ruby-identifier">round</span>,
+100:             ((<span class="ruby-identifier">blue</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>[<span class="ruby-identifier">with</span>.<span class="ruby-identifier">blue</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>, <span class="ruby-identifier">opacity</span>]<span class="ruby-operator">*</span><span class="ruby-value">255</span>).<span class="ruby-identifier">round</span>,
+101:             <span class="ruby-identifier">alpha</span>
+102:           )
+103:         <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:negative_multiply</span>
+104:           <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(
+105:             ((<span class="ruby-value">1</span><span class="ruby-operator">-</span>(<span class="ruby-value">1</span><span class="ruby-operator">-</span><span class="ruby-identifier">red</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>[<span class="ruby-value">1</span><span class="ruby-operator">-</span><span class="ruby-identifier">with</span>.<span class="ruby-identifier">red</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>, <span class="ruby-identifier">opacity</span>])<span class="ruby-operator">*</span><span class="ruby-value">255</span>).<span class="ruby-identifier">round</span>,
+106:             ((<span class="ruby-value">1</span><span class="ruby-operator">-</span>(<span class="ruby-value">1</span><span class="ruby-operator">-</span><span class="ruby-identifier">green</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>[<span class="ruby-value">1</span><span class="ruby-operator">-</span><span class="ruby-identifier">with</span>.<span class="ruby-identifier">green</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>, <span class="ruby-identifier">opacity</span>])<span class="ruby-operator">*</span><span class="ruby-value">255</span>).<span class="ruby-identifier">round</span>,
+107:             ((<span class="ruby-value">1</span><span class="ruby-operator">-</span>(<span class="ruby-value">1</span><span class="ruby-operator">-</span><span class="ruby-identifier">blue</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">value</span>[<span class="ruby-value">1</span><span class="ruby-operator">-</span><span class="ruby-identifier">with</span>.<span class="ruby-identifier">blue</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>, <span class="ruby-identifier">opacity</span>])<span class="ruby-operator">*</span><span class="ruby-value">255</span>).<span class="ruby-identifier">round</span>,
+108:             <span class="ruby-identifier">alpha</span>
+109:           )
+110:         <span class="ruby-keyword kw">else</span>
+111:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown mode, #{using}&quot;</span>
+112:       <span class="ruby-keyword kw">end</span>
+113:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000043" class="method-detail">
+        <a name="M000043"></a>
+
+        <div class="method-heading">
+          <a href="#M000043" class="method-signature">
+          <span class="method-name">to_a</span><span class="method-args">(as_floats=false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <h3>Synopsis</h3>
+<pre>
+  rgb.to_a # =&gt; array
+</pre>
+<h3>Description</h3>
+<p>
+Returns all values in an array. If <tt>as_floats</tt> is true, the values
+are converted to float values between 0 and 1.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000043-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000043-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/color/rgb.rb, line 145</span>
+145:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_a</span>(<span class="ruby-identifier">as_floats</span>=<span class="ruby-keyword kw">false</span>)
+146:       <span class="ruby-identifier">as_floats</span> <span class="ruby-value">?
+147: </span>        [<span class="ruby-identifier">red</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>, <span class="ruby-identifier">green</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>, <span class="ruby-identifier">blue</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>, <span class="ruby-identifier">alpha</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>] <span class="ruby-operator">:</span>
+148:         [<span class="ruby-identifier">red</span>, <span class="ruby-identifier">green</span>, <span class="ruby-identifier">blue</span>, <span class="ruby-identifier">alpha</span>]
+149:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000044" class="method-detail">
+        <a name="M000044"></a>
+
+        <div class="method-heading">
+          <a href="#M000044" class="method-signature">
+          <span class="method-name">to_hash</span><span class="method-args">(as_floats=false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <h3>Synopsis</h3>
+<pre>
+  rgb.to_hash # =&gt; hash
+</pre>
+<h3>Description</h3>
+<p>
+Returns all values in a hash with keys :red, :green, :blue and :alpha. If
+<tt>as_floats</tt> is true, the values are converted to float values
+between 0 and 1.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000044-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000044-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/color/rgb.rb, line 159</span>
+159:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_hash</span>(<span class="ruby-identifier">as_floats</span>=<span class="ruby-keyword kw">false</span>)
+160:       <span class="ruby-identifier">as_floats</span> <span class="ruby-value">?
+161: </span>        {
+162:           <span class="ruby-identifier">:red</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">red</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>,
+163:           <span class="ruby-identifier">:green</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">green</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>,
+164:           <span class="ruby-identifier">:blue</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">blue</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>,
+165:           <span class="ruby-identifier">:alpha</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">alpha</span><span class="ruby-operator">/</span><span class="ruby-value">255.0</span>
+166:         } <span class="ruby-operator">:</span>
+167:         {
+168:           <span class="ruby-identifier">:red</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">red</span>,
+169:           <span class="ruby-identifier">:green</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">green</span>,
+170:           <span class="ruby-identifier">:blue</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">blue</span>,
+171:           <span class="ruby-identifier">:alpha</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">alpha</span>
+172:         }
+173:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000041" class="method-detail">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+          <a href="#M000041" class="method-signature">
+          <span class="method-name">to_i</span><span class="method-args">(with_alpha=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <h3>Synopsis</h3>
+<pre>
+   rgb.to_i                                # =&gt; integer
+   Color::RGB.from_int(rgb.to_i).eql?(rgb) # =&gt; true
+</pre>
+<h3>Description</h3>
+<p>
+Returns an Integer representation of this color. The format is 0xaarrggbb.
+If with_alpha is false/nil, the aa part is 0.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000041-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000041-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/color/rgb.rb, line 124</span>
+124:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_i</span>(<span class="ruby-identifier">with_alpha</span>=<span class="ruby-keyword kw">nil</span>)
+125:       (<span class="ruby-identifier">with_alpha</span> <span class="ruby-value">? </span>(<span class="ruby-ivar">@alpha</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">24</span>) <span class="ruby-operator">:</span> <span class="ruby-value">0</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@red</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">16</span>) <span class="ruby-operator">+</span> (<span class="ruby-ivar">@green</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">8</span>) <span class="ruby-operator">+</span> <span class="ruby-ivar">@blue</span>
+126:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000042" class="method-detail">
+        <a name="M000042"></a>
+
+        <div class="method-heading">
+          <a href="#M000042" class="method-signature">
+          <span class="method-name">to_s</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <h3>Synopsis</h3>
+<pre>
+   rgb.to_s # =&gt; string
+</pre>
+<h3>Description</h3>
+<p>
+Returns a String representation of this color.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000042-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000042-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/color/rgb.rb, line 134</span>
+134:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+135:       <span class="ruby-value str">&quot;RGB: %d, %d, %d, %d (%s)&quot;</span> <span class="ruby-operator">%</span>  [<span class="ruby-identifier">red</span>, <span class="ruby-identifier">green</span>, <span class="ruby-identifier">blue</span>, <span class="ruby-identifier">alpha</span>, <span class="ruby-identifier">to_html</span>]
+136:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
